@@ -1,4 +1,6 @@
-/* Copyright © 2016 Oracle and/or its affiliates. All rights reserved. */
+/*eddy comment */
+
+/* Copyright Â© 2016 Oracle and/or its affiliates. All rights reserved. */
 package com.example.rest;
  
 import java.util.Optional;
@@ -12,7 +14,8 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
- 
+
+
 @SpringBootApplication
 public class App {
  
