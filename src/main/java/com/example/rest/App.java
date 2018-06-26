@@ -43,8 +43,9 @@ public class App {
  
         System.out.println("Server started");
  
+        runDatabaseQuery();
         runGetRequest();
-        //runDatabaseQuery();
+        
     }
  
     /**
@@ -52,13 +53,15 @@ public class App {
      */
     private static void runGetRequest() {
  
-    for (int i=9; i>=0; i--)
-    {
+    //for (int i=9; i>=0; i--)
+    //{
             // sample URL
             //String url = "http://ip.jsontest.com/";
             //String url = "http://140.86.15.104:3000/shield/33/45/red/EddyOnGitHub/";
-            String YY = String.valueOf(i); 
-            String url = "http://140.86.15.104:3000/fighters/45/" + YY + "/red/EddyOnGitHub/";
+            String url = "http://140.86.15.104:3000/reactorCore/320/650/red/EddyOnGitHub/";
+      
+            //String YY = String.valueOf(i); 
+            //String url = "http://140.86.15.104:3000/fighters/45/" + YY + "/red/EddyOnGitHub/";
 
             CloseableHttpResponse response = null;
 
@@ -79,17 +82,17 @@ public class App {
                     System.out.println(ie);
                 }
             } 
-    }
+    //}
     }
  
     /**
      * Performs a call to the database.
      */
     private static void runDatabaseQuery() {
-        String host = "myHost";
-        String database = "myDatabase";
-        String user = "myUsername";
-        String password = "myPassword";
+        String host = "140.86.15.104";
+        String database = "deathstar";
+        String user = "Captain";
+        String password = "welcome1";
         DBConnection db = new DBConnection("jdbc:mysql://" 
                 + host + "/" 
                 + database + "?user=" 
