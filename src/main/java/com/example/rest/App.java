@@ -52,28 +52,34 @@ public class App {
      */
     private static void runGetRequest() {
  
-    	// sample URL
-        //String url = "http://ip.jsontest.com/";
-        String url = "http://140.86.15.104:3000/shield/33/45/red/EddyOnGitHub/";
-        CloseableHttpResponse response = null;
- 
-        try {
-            CloseableHttpClient httpclient = HttpClients.createDefault();
-            HttpGet httpGet = new HttpGet(url);
-            response = httpclient.execute(httpGet);
-            String content = EntityUtils.toString(response.getEntity());
-            System.out.println("Server response: " + content);
-        } catch (IOException e) {
-            System.out.println(e);
-        } finally {
+    for (int i=9; i>=0; i--)
+    {
+            // sample URL
+            //String url = "http://ip.jsontest.com/";
+            //String url = "http://140.86.15.104:3000/shield/33/45/red/EddyOnGitHub/";
+            String YY = String.valueOf(i); 
+            String url = "http://140.86.15.104:3000/fighters/45/" + YY + "/red/EddyOnGitHub/";
+
+            CloseableHttpResponse response = null;
+
             try {
-                if (response != null) {
-                    response.close();
+                CloseableHttpClient httpclient = HttpClients.createDefault();
+                HttpGet httpGet = new HttpGet(url);
+                response = httpclient.execute(httpGet);
+                String content = EntityUtils.toString(response.getEntity());
+                System.out.println("Server response: " + content);
+            } catch (IOException e) {
+                System.out.println(e);
+            } finally {
+                try {
+                    if (response != null) {
+                        response.close();
+                    }
+                } catch (IOException ie) {
+                    System.out.println(ie);
                 }
-            } catch (IOException ie) {
-                System.out.println(ie);
-            }
-        }    
+            } 
+    }
     }
  
     /**
